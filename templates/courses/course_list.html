@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %}Courses{% endblock %}</h1>
+
+    <ol>
+        {% for course in course_list %}
+            <li>
+                {{ course.name }} by {{ course.professor }}
+                <ul>
+                    {% for task in course.tasks.all %}
+                        <li>{{ task.name }}</li>
+                    {% endfor %}
+                </ul>
+            </li>
+        {% endfor %}
+    </ol>
+{% endblock content %}
