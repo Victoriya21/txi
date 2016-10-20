@@ -1,5 +1,5 @@
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.template import RequestContext
 from django.template import loader
 from django.views.generic import ListView
@@ -12,7 +12,8 @@ class CourseListView(ListView):
 
 
 def detail(request, course_id):
-    output = Course.objects.filter(id=course_id)
+    # output = Course.objects.get(id=course_id)
+    output = get_object_or_404(Course, id=course_id)
     # template = loader.get_template('courses/one_course.html')
     # context = RequestContext(request, {
     #     'one_course': output,
