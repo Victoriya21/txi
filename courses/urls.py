@@ -1,7 +1,8 @@
 from django.conf.urls import url
 
-from courses.views import CourseListView
+from . import views
 
 urlpatterns = [
-    url(r'^$', CourseListView.as_view(), name='course_list'),
+    url(r'^$', views.CourseListView.as_view(), name='course_list'),
+    url(r'^(?P<course_id>\d+)/$', views.detail, name='detail'),
 ]
