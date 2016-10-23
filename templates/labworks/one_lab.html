@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %}One Labwork{% endblock %}</h1>
+{{ one_lab.name }}
+    <div>Автор: {{ one_lab.author }}</div>
+    <div>Оценка: {{ one_lab.mark }}</div>
+    <div>Состояние: {{ one_lab.condition }}</div>
+    <div>Комментарий: {{ one_lab.comment }}</div>
+    <div>Файл: {{ one_lab.file }}</div>
+{% endblock content %}
