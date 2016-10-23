@@ -8,4 +8,6 @@
     <div>Состояние: {{ one_lab.condition }}</div>
     <div>Комментарий: {{ one_lab.comment }}</div>
     <div>Файл: {{ one_lab.file }}</div>
+    <div>Задание: {{ one_lab.task.name }}</div>
+    <div>Курс: {{ one_lab.task.course.name }}</div>
 {% endblock content %}

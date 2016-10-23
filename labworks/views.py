@@ -17,10 +17,11 @@ def create(request):
             labwork.mark = 0
             labwork.condition = "не проверена"
             labwork.author = request.user
-            #labwork.task = Task.objects.get(id=request.task_id)
+            labwork.task = Task.objects.get(id=2)
             labwork.save()
-            # return redirect('blog.views.post_detail', pk=post.pk)
+            return redirect('detail', lab_id=labwork.pk)
     else:
+        # course_id = request.GET.get('course_id', '')
         form = LabForm()
     return render(request, 'labworks/create_lab.html', {'form': form})
 
