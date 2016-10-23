@@ -5,7 +5,7 @@ from courses.models import Course
 
 
 class Task(models.Model):
-    course = models.ForeignKey(Course, related_name='courses')
+    course = models.ForeignKey(Course, related_name='tasks')
     name = models.CharField(max_length=50)
     text = models.TextField()
     points = models.PositiveSmallIntegerField()
