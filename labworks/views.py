@@ -1,8 +1,4 @@
-from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404
-from django.template import RequestContext
-from django.template import loader
-from django.views.generic import ListView
 from labworks.models import Lab
 from tasks.models import Task
 from .forms import LabForm

@@ -1,7 +1,6 @@
 from django.db import models
-
 from courses.models import Course
-##from labworks.models import Lab
+# from labworks.models import Lab
 
 
 class Task(models.Model):
