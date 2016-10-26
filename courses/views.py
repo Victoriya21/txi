@@ -1,9 +1,5 @@
-from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404
-from django.template import RequestContext
-from django.template import loader
 from django.views.generic import ListView
-
 from courses.models import Course
 
 
