@@ -15,11 +15,11 @@ def create(request):
         form = LabForm(request.POST, request.FILES)  ##added
         if form.is_valid():
             labwork = form.save(commit=False)
-            labwork.handle_uploaded_file(request.FILES['file']) ##added
+          ##  labwork.handle_uploaded_file(request.FILES['file']) ##added
          ##   labwork.
 
-            labwork.mark = 0
-            labwork.condition = "не проверена"
+          #  labwork.mark = 0
+          #  labwork.condition = "не проверена"
             labwork.author = request.user
             labwork.task = Task.objects.get(id=2)
             labwork.save()
