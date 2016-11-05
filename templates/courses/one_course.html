@@ -10,7 +10,7 @@
                 Text: {{ task.text }}
                 Points: {{ task.points }}
              <a href="http://127.0.0.1:8000/labworks/create/{{ task.pk }}"> Добавить ответ</a>
-
+             <a href="http://127.0.0.1:8000/courses/{{ one_course.pk }}/delete/{{ task.pk }}"> Удалить задание</a>
 
             </li>
         {% endfor %}
