@@ -7,6 +7,7 @@
         {% for course in course_list %}
             <li>
                 {{ course.name }} by {{ course.professor }} <a href="http://127.0.0.1:8000/courses/{{ course.id }}"> click me plzz</a>
+                <a href='/courses/delete/{{course.id}}/'> Удалить</a>
                 <ul>
                     {% for task in course.tasks.all %}
                         <li>{{ task.name }}  </li>
