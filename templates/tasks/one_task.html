@@ -1,10 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %}One Task{% endblock %}</h1>
+{{ one_task.name }}
+    <ul>
+        <li>Задание: {{ one_task.text }}</li>
+        <li>Курс: one_task.course.name</li>
+        <li>Максимальный балл: one_task.points</li>
+    </ul>
+{% endblock content %}
