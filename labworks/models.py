@@ -6,10 +6,19 @@ from tasks.models import Task
 
 class Lab(models.Model):
     name = models.CharField(max_length=50)
-    mark = models.PositiveSmallIntegerField()
+    mark = models.PositiveSmallIntegerField(default=0)
     comment = models.TextField()
-    condition = models.CharField(max_length=50)  # исправить?
-    file = models.CharField(max_length=250)
+
+    CONDITION_CHECKED = 'checked'
+    CONDITION_NOT_CHECKED = 'not checked'
+    CONDITION_CHOICES = (
+        (CONDITION_CHECKED, 'Проверена'),
+        (CONDITION_NOT_CHECKED, 'Не проверена'),
+    )
+    condition = models.CharField(max_length=50, choices=CONDITION_CHOICES, default=CONDITION_NOT_CHECKED)  # исправить?
+
+    ##file = models.CharField(max_length=250)
+    file = models.FileField()
     task = models.ForeignKey(Task, related_name='tasks')
     author = models.ForeignKey(User)
 

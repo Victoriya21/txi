@@ -5,15 +5,19 @@ from .forms import LabForm
 from django.shortcuts import redirect
 
 
-def create(request):
+def create(request, task_id):
     if request.method == "POST":
-        form = LabForm(request.POST)
+        ##form = LabForm(request.POST)
+        form = LabForm(request.POST, request.FILES)  ##added
         if form.is_valid():
             labwork = form.save(commit=False)
-            labwork.mark = 0
-            labwork.condition = "не проверена"
+          ##  labwork.handle_uploaded_file(request.FILES['file']) ##added
+         ##   labwork.
+
+          #  labwork.mark = 0
+          #  labwork.condition = "не проверена"
             labwork.author = request.user
-            labwork.task = Task.objects.get(id=2)
+            labwork.task = Task.objects.get(id=task_id)
             labwork.save()
             return redirect('detail', lab_id=labwork.pk)
     else:

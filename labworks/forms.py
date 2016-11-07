@@ -6,3 +6,4 @@ class LabForm(forms.ModelForm):
     class Meta:
         model = Lab
         fields = ('name', 'comment', 'file')
+
