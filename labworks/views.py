@@ -1,10 +1,11 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404
 from labworks.models import Lab
 from tasks.models import Task
 from .forms import LabForm
 from django.shortcuts import redirect
 
-
+@login_required()
 def create(request, task_id):
     if request.method == "POST":
         ##form = LabForm(request.POST)
