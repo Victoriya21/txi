@@ -1,11 +1,10 @@
-from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404
 from .models import Task
 from courses.models import Course
 from .forms import TaskForm
 from django.shortcuts import redirect
 
-@login_required
+
 def detail(request, task_id):
     output = get_object_or_404(Task, id=task_id)
     context = {'one_task': output}
