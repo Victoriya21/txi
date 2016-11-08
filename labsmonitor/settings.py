@@ -25,6 +25,8 @@ SECRET_KEY = 'f!by5dq=aopcg=o_5l7=^*=(c9hp!!76f2$!151s^)7y$=if^^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+LOGIN_REDIRECT_URL = '/courses/'
+LOGIN_URL = '/login/'
 ALLOWED_HOSTS = []
 
 
