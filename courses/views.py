@@ -1,4 +1,4 @@
-from django.http import HttpResponse
+# from django.http import HttpResponse
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView
@@ -24,7 +24,7 @@ def create(request):
         form = CourseForm(request.POST)
         if form.is_valid():
             course = form.save(commit=False)
-            course.professor = request.user;
+            course.professor = request.user
             course.save()
             return redirect('detail', course_id=course.pk)
     else:

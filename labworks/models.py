@@ -17,7 +17,7 @@ class Lab(models.Model):
     )
     condition = models.CharField(max_length=50, choices=CONDITION_CHOICES, default=CONDITION_NOT_CHECKED)  # исправить?
 
-    ##file = models.CharField(max_length=250)
+    # file = models.CharField(max_length=250)
     file = models.FileField()
     task = models.ForeignKey(Task, related_name='tasks')
     author = models.ForeignKey(User)
