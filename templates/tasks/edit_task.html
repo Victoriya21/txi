@@ -1,34 +1,34 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>{% block title %}Добавление задания{% endblock %}</h1>
+    <h1>{% block title %}Редактирование задания{% endblock %}</h1>
     <form method="POST">{% csrf_token %}
         <input type="hidden" name="course_id" id="course_id" />
 
         <div class="form-group">
           <label for="inputName" class="col-lg-2 control-label">Введите наименование задания</label>
           <div class="col-lg-10">
-            <input type="text" class="form-control" name="name" id="taskName" placeholder="Наименование">
+            <input type="text" class="form-control" name="name" id="editTaskName" placeholder="Наименование" value="{{ edit_task.name }}">
           </div>
         </div>
 
         <div class="form-group">
           <label for="textArea" class="col-lg-2 control-label">Введите описание задания</label>
           <div class="col-lg-10">
-            <textarea class="form-control" rows="3" name="text" id="taskText"></textarea>
+            <textarea class="form-control" rows="3" name="text" id="editTaskText">{{ edit_task.text }}</textarea>
           </div>
         </div>
 
         <div class="form-group">
           <label for="inputName" class="col-lg-2 control-label">Введите максимальное количество баллов</label>
           <div class="col-lg-10">
-            <input type="text" class="form-control" name="points" id="taskPoints" placeholder="Баллы">
+            <input type="text" class="form-control" name="points" id="editTaskPoints" placeholder="Баллы" value="{{ edit_task.points }}" />
           </div>
         </div>
 
         <div class="form-group">
           <div class="col-lg-10 col-lg-offset-2">
-            <button type="submit" class="btn btn-info" id="taskAddSubmit">Добавить</button>
+            <button type="submit" class="btn btn-info" id="taskEditSubmit">Сохранить</button>
           </div>
         </div>
     </form>

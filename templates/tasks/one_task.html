@@ -1,11 +1,51 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>{% block title %}One Task{% endblock %}</h1>
-{{ one_task.name }}
-    <ul>
-        <li>Задание: {{ one_task.text }}</li>
-        <li>Курс: one_task.course.name</li>
-        <li>Максимальный балл: one_task.points</li>
-    </ul>
+    <h1>{% block title %}Задание - {{ one_task.name }}{% endblock %}</h1>
+    <h4>Курс: {{ one_task.course.name }}</h4>
+    <h4>Максимальный балл: {{ one_task.points }}</h4>
+    <h4>Описание задания:</h4>
+    <p>{{ one_task.text }}</p>
+
+
+
+    <h2>Загруженные работы:</h2>
+    <a href="http://127.0.0.1:8000/labworks/create/{{ one_task.pk }}" id="addLabwork" class="btn btn-primary"> Добавить ответ</a>
+
+    <table class="table table-striped table-hover ">
+      <thead>
+        <tr>
+            <th>#</th>
+            <th>Имя пользователя</th>
+            <th>Наименование работы</th>
+            <th>Оценка</th>
+            <th>Комментарии</th>
+            <th>Состояние</th>
+            <th>Файл</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for lab in one_task.labs.all %}
+          {% if user.pk == lab.author.pk or user.pk == one_task.course.professor.pk %}
+            <tr>
+                <td>{{ lab.pk }}</td>
+                <td>{{ lab.author }}</td>
+                <td>{{ lab.name }}</td>
+                <td>{{ lab.mark }}</td>
+                <td>{{ lab.comment }}</td>
+                <td>{{ lab.condition }}</td>
+                <td><a href="http://127.0.0.1:8000/labworks/download_file/{{ lab.pk }}">{{ lab.file }}</a></td>
+                {% if user.pk == lab.author.pk %}
+                    <td><a href="http://127.0.0.1:8000/labworks/edit/{{ lab.pk }}" id="editLabwork">Редактировать</a> </td>
+                {% endif %}
+                {% if user.pk == one_task.course.professor.pk %}
+                    <td><a href="http://127.0.0.1:8000/labworks/check/{{ lab.pk }}" id="checkLabwork">Оценить</a> </td>
+                {% endif %}
+            </tr>
+          {% endif %}
+      {% endfor %}
+      </tbody>
+    </table>
+
+    <a href="http://127.0.0.1:8000/courses/{{ one_task.course.pk }}" id="back">Назад</a>
 {% endblock content %}

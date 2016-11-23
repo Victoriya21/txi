@@ -1,18 +1,35 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>{% block title %}One Course{% endblock %}</h1>
-{{ one_course.name }}
-    <ol>
-        {% for task in one_course.tasks.all %}
-            <li>
-                Name: {{ task.name }}
-                Text: {{ task.text }}
-                Points: {{ task.points }}
-             <a href="http://127.0.0.1:8000/labworks/create/{{ task.pk }}"> Добавить ответ</a>
-             <a href="http://127.0.0.1:8000/courses/{{ one_course.pk }}/delete/{{ task.pk }}"> Удалить задание</a>
+    <h1>{% block title %}{{ one_course.name }}{% endblock %}</h1>
+    <h4>Преподаватель - {{ one_course.professor }}</h4>
 
-            </li>
-        {% endfor %}
-    </ol>
+    {% if perms.tasks.add_task %}
+        <a href="http://127.0.0.1:8000/tasks/create" id="addTask" class="btn btn-primary">Добавить задание</a>
+    {% endif %}
+
+    <table class="table table-striped table-hover ">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Наименование задания</th>
+          <th>Максимальный балл</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for task in one_course.tasks.all %}
+        <tr>
+          <td>{{ task.id }}</td>
+          <td><a href="http://127.0.0.1:8000/tasks/{{ task.pk }}/">{{ task.name }}</a></td>
+          <td>{{ task.points }}</td>
+            {% if user.pk == one_course.professor.pk %}
+              <td><a href="http://127.0.0.1:8000/tasks/edit/{{ task.pk }}" id="editTask">Редактировать</a></td>
+              <td><a href="http://127.0.0.1:8000/courses/{{ one_course.pk }}/delete/{{ task.pk }}">Удалить</a></td>
+            {% endif %}
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+
+    <a href="http://127.0.0.1:8000/courses">Назад</a>
 {% endblock content %}

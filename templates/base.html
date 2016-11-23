@@ -1,11 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+{% load staticfiles %}
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 </head>
 <body>
+<header>
+    <div class="navbar navbar-inverse navbar-fixed-top" >
+      <div class="container">
+        <div class="navbar-header">
+          <a href="http://127.0.0.1:8000/courses" class="navbar-brand">Система управления лабораторными работами</a>
+        </div>
+
+        <ul class="nav navbar-nav navbar-right">
+        {% if user.is_authenticated %}
+            <li><a>Здравствуйте, {{ user.username }}!</a></li>
+            <li><a href="{% url 'logout' %}">Выйти</a></li>
+        {% endif %}
+        </ul>
+
+        </div>
+      </div>
+    </div>
+</header>
+
+<div class="content">
 {% block content %}
 {% endblock content %}
+</div>
+
+<footer>
+    <p class="text-primary">©2016 - AICS group</p>
+    <p class="text-primary">Сайт разработан командой AICS group</p>
+</footer>
+
+<script type="text/javascript" src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/script.js' %}"></script>
 </body>
 </html>

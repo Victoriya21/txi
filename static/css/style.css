@@ -1,0 +1,30 @@
+.content {
+    margin: 4% 2%;
+    overflow: auto;
+}
+
+a.btn.btn-primary {
+    margin: 1% 2% 1% 0;
+}
+
+table th {
+    text-align: center;
+}
+
+table tbody {
+    text-align: center;
+}
+
+footer {
+    border-top: 1px solid black;
+    text-align: center;
+    padding-top: 1%;
+}
+
+#back {
+    float: left;
+}
+
+.form-group {
+    overflow: auto;
+}

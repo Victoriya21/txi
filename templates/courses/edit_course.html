@@ -1,18 +1,18 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>{% block title %}Добавление курса{% endblock %}</h1>
-    <form method="POST">{% csrf_token %}
+    <h1>{% block title %}Редактировать Курс{% endblock %}</h1>
+    <form method="post">{% csrf_token %}
         <div class="form-group">
           <label for="inputName" class="col-lg-2 control-label">Введите наименование курса</label>
           <div class="col-lg-10">
-            <input type="text" class="form-control" name="name" id="courseName" placeholder="Наименование">
+            <input type="text" class="form-control" name="name" id="courseName" placeholder="Наименование" value="{{ edit_course.name }}">
           </div>
         </div>
 
         <div class="form-group">
           <div class="col-lg-10 col-lg-offset-2">
-            <button type="submit" class="btn btn-info">Добавить</button>
+            <button type="submit" class="btn btn-info">Сохранить</button>
           </div>
         </div>
     </form>

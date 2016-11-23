@@ -1,34 +1,36 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>{% block title %}Добавление ответа{% endblock %}</h1>
+    <h1>{% block title %}Редактирование ответа{% endblock %}</h1>
+
     <form method="POST" enctype="multipart/form-data">{% csrf_token %}
         <input type="hidden" name="task_id" id="task_id" />
 
         <div class="form-group">
           <label for="inputName" class="col-lg-2 control-label">Введите наименование вашей лаб. работы</label>
           <div class="col-lg-10">
-            <input type="text" class="form-control" name="name" id="labName" placeholder="Наименование">
+            <input type="text" class="form-control" name="name" id="editLabName" placeholder="Наименование" value="{{ edit_lab.name }}">
           </div>
         </div>
 
         <div class="form-group">
           <label for="inputName" class="col-lg-2 control-label">Выберите файл</label>
           <div class="col-lg-10">
-            <input type="file" class="form-control" name="file" id="labFile">
+            <input type="file" class="form-control" name="file" id="editLabFile" value="{{ edit_lab.file }}">
           </div>
         </div>
 
-        <input type="hidden" class="form-control" name="mark" id="labName" value="0">
+        <input type="hidden" name="mark" id="editMarkLab" value="{{ edit_lab.mark }}" />
 
-        <textarea rows="3" name="comment" id="taskText" style="display: none;">...</textarea>
+        <textarea style="display: none;" name="comment" id="editCommentLab">{{ edit_lab.comment }}</textarea>
 
         <div class="form-group">
           <div class="col-lg-10 col-lg-offset-2">
-            <button type="submit" class="btn btn-info" id="labAddSubmit">Добавить ответ</button>
+            <button type="submit" class="btn btn-info" id="labEditSubmit">Сохранить</button>
           </div>
         </div>
+
     </form>
 
-    <a href="javascript:history.go(-1)">Назад</a>
+    <a href="javascript:history.go(-1)" id="back">Назад</a>
 {% endblock content %}
