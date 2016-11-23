@@ -27,6 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+LOGIN_URL = '/'
+LOGIN_REDIRECT_URL = '/courses/'
 
 # Application definition
 
@@ -130,5 +132,9 @@ MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'media')
 
 
 MEDIA_URL = '/media/'
-STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
+#STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static_all')
 
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)

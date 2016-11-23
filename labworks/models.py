@@ -9,17 +9,16 @@ class Lab(models.Model):
     mark = models.PositiveSmallIntegerField(default=0)
     comment = models.TextField()
 
-    CONDITION_CHECKED = 'checked'
-    CONDITION_NOT_CHECKED = 'not checked'
+    CONDITION_CHECKED = 'Проверена'
+    CONDITION_NOT_CHECKED = 'Не проверена'
     CONDITION_CHOICES = (
         (CONDITION_CHECKED, 'Проверена'),
         (CONDITION_NOT_CHECKED, 'Не проверена'),
     )
     condition = models.CharField(max_length=50, choices=CONDITION_CHOICES, default=CONDITION_NOT_CHECKED)  # исправить?
 
-    ##file = models.CharField(max_length=250)
     file = models.FileField()
-    task = models.ForeignKey(Task, related_name='tasks')
+    task = models.ForeignKey(Task, related_name='labs')
     author = models.ForeignKey(User)
 
     def __str__(self):
