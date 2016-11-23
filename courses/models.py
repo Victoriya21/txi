@@ -7,5 +7,6 @@ class Course(models.Model):
     professor = models.ForeignKey(User)
     # professor = models.ForeignKey(settings.AUTH_USER_MODEL)
 
+
     def __str__(self):
         return '{0} by {1}'.format(self.name, self.professor)
