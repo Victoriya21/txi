@@ -1,34 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="35976851-615f-41db-9d77-db8d7baa38cb" name="Default" comment="Add new labsapp, labsmonitor, labworks">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db.sqlite3" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/labsmonitor/media/Docy.docx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/labsmonitor/media/Kollokvium_IVT.docx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/labsmonitor/media/Kollokvium_IVT_UiultN8.docx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/labsmonitor/media/Laba_1_FINAL.docx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/labsmonitor/media/Prezentatsia_5_Mikroprotsessory_2.pptx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/labsmonitor/media/Voprosy_dlya_kollokviuma.docx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/labsmonitor/media/images.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/labsmonitor/media/Анкета_кандидата_Фамилия_ИО.docx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/labsmonitor/media/Безымянный.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/labsmonitor/media/Доклад_Гомбодоржиев.docx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/labsmonitor/media/нарк.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/labsmonitor/media/10_Serdtse_Zonyi.fb2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/labworks/migrations/0002_auto_20161110_1257.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tasks/migrations/0002_auto_20161110_1257.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/labsmonitor.iml" afterPath="$PROJECT_DIR$/.idea/labsmonitor.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+    <list default="true" id="35976851-615f-41db-9d77-db8d7baa38cb" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/courses/forms.py" afterPath="$PROJECT_DIR$/courses/forms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/courses/models.py" afterPath="$PROJECT_DIR$/courses/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/courses/urls.py" afterPath="$PROJECT_DIR$/courses/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/courses/views.py" afterPath="$PROJECT_DIR$/courses/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/labsapp/tests.py" afterPath="$PROJECT_DIR$/labsapp/tests.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/labsmonitor/settings.py" afterPath="$PROJECT_DIR$/labsmonitor/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/labsmonitor/urls.py" afterPath="$PROJECT_DIR$/labsmonitor/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/labworks/forms.py" afterPath="$PROJECT_DIR$/labworks/forms.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/labworks/test_create.py" afterPath="$PROJECT_DIR$/labworks/test_create.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/labworks/urls.py" afterPath="$PROJECT_DIR$/labworks/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/labworks/views.py" afterPath="$PROJECT_DIR$/labworks/views.py" />
     </list>
     <ignored path="labsmonitor.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -66,13 +44,37 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/labworks/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="329">
+              <caret line="100" column="41" selection-start-line="100" selection-start-column="41" selection-end-line="100" selection-end-column="41" />
+              <folding>
+                <element signature="e#0#36#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="test_create.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/labworks/test_create.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="550">
-              <caret line="104" column="0" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
+            <state relative-caret-position="434">
+              <caret line="103" column="19" selection-start-line="103" selection-start-column="19" selection-end-line="103" selection-end-column="19" />
               <folding>
                 <element signature="e#48#98#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/labworks/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+              <folding>
+                <element signature="e#0#32#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -88,14 +90,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/courses/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="550">
-              <caret line="92" column="0" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
+            <state relative-caret-position="244">
+              <caret line="78" column="0" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
               <folding>
                 <element signature="e#0#44#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tests.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/labsapp/tests.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -134,38 +146,6 @@
       </file>
       <file leaf-file-name="forms.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/courses/forms.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#24#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/labsmonitor/settings.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="550">
-              <caret line="140" column="0" selection-start-line="140" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/labsmonitor/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="forms.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/labworks/forms.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="136">
               <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
@@ -219,7 +199,6 @@
         <option value="$PROJECT_DIR$/templates/labworks/lab_list.html" />
         <option value="$PROJECT_DIR$/labworks/models.py" />
         <option value="$PROJECT_DIR$/static/js/script.js" />
-        <option value="$PROJECT_DIR$/labworks/urls.py" />
         <option value="$PROJECT_DIR$/templates/courses/create_course.html" />
         <option value="$PROJECT_DIR$/templates/courses/edit_course.html" />
         <option value="$PROJECT_DIR$/templates/tasks/create_task.html" />
@@ -240,16 +219,17 @@
         <option value="$PROJECT_DIR$/tasks/urls.py" />
         <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/.travis.yml" />
-        <option value="$PROJECT_DIR$/labworks/views.py" />
-        <option value="$PROJECT_DIR$/labsapp/tests.py" />
         <option value="$PROJECT_DIR$/labsmonitor/settings.py" />
         <option value="$PROJECT_DIR$/labsmonitor/urls.py" />
         <option value="$PROJECT_DIR$/labworks/forms.py" />
-        <option value="$PROJECT_DIR$/labworks/test_create.py" />
         <option value="$PROJECT_DIR$/courses/forms.py" />
         <option value="$PROJECT_DIR$/courses/models.py" />
         <option value="$PROJECT_DIR$/courses/urls.py" />
         <option value="$PROJECT_DIR$/courses/views.py" />
+        <option value="$PROJECT_DIR$/labsapp/tests.py" />
+        <option value="$PROJECT_DIR$/labworks/test_create.py" />
+        <option value="$PROJECT_DIR$/labworks/urls.py" />
+        <option value="$PROJECT_DIR$/labworks/views.py" />
       </list>
     </option>
   </component>
@@ -913,7 +893,14 @@
       <option name="project" value="LOCAL" />
       <updated>1479926240723</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Add new labsapp, labsmonitor, labworks">
+      <created>1479980710564</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1479980710564</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1038,10 +1025,10 @@
     <MESSAGE value="Merge branch 'Vika'&#10;&#10;# Conflicts:&#10;#&#9;courses/urls.py&#10;#&#9;courses/views.py&#10;#&#9;labworks/models.py&#10;" />
     <MESSAGE value="добавление настроек travis etc" />
     <MESSAGE value="добавление курсов" />
-    <MESSAGE value="Add new labsapp, labsmonitor, labworks" />
     <MESSAGE value="Add design, tasks, templates" />
     <MESSAGE value="Add new file django tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add new file django tests" />
+    <MESSAGE value="Add new labsapp, labsmonitor, labworks" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add new labsapp, labsmonitor, labworks" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1251,13 +1238,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/labworks/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="15" column="47" selection-start-line="15" selection-start-column="47" selection-end-line="15" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tasks/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -1323,22 +1303,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/labworks/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1411">
-          <caret line="94" column="10" selection-start-line="94" selection-start-column="10" selection-end-line="94" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/labsapp/tests.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/labsmonitor/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="550">
@@ -1373,16 +1337,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/labworks/test_create.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="104" column="0" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
-          <folding>
-            <element signature="e#48#98#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/courses/forms.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -1403,14 +1357,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/courses/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/labsapp/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -1419,12 +1365,58 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/labsapp/tests.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/labworks/test_create.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="434">
+          <caret line="103" column="19" selection-start-line="103" selection-start-column="19" selection-end-line="103" selection-end-column="19" />
+          <folding>
+            <element signature="e#48#98#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/courses/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/labworks/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/courses/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="92" column="0" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
+        <state relative-caret-position="244">
+          <caret line="78" column="0" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
           <folding>
             <element signature="e#0#44#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/labworks/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="329">
+          <caret line="100" column="41" selection-start-line="100" selection-start-column="41" selection-end-line="100" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
           </folding>
         </state>
       </provider>

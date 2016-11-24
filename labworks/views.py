@@ -15,17 +15,20 @@ from django.contrib.auth.decorators import user_passes_test
 class LabListView(ListView):
     model = Lab
 
+
 def user_check(user):
     if user.groups.filter(name__in=['Students']) or user.groups.filter(name__in=['Teachers']) or user.is_superuser:
         return True
     else:
         return False
 
+
 def student_check(user):
     if user.groups.filter(name__in=['Students']):
         return True
     else:
         return False
+
 
 def admin_check(user):
     if user.groups.filter(name__in=['Teachers']) or user.is_superuser:
@@ -34,8 +37,6 @@ def admin_check(user):
         return False
 
 
-
-#CREATE
 @user_passes_test(student_check)
 def create(request, task_id):
     if request.method == "POST":
@@ -46,12 +47,11 @@ def create(request, task_id):
             labwork.task = Task.objects.get(id=task_id)
             labwork.save()
             return redirect(reverse('taskDetail', args=[task_id]))
-            #return redirect('http://127.0.0.1:8000/tasks/'+task_id, lab_id=labwork.pk)
     else:
         form = LabForm()
     return render(request, 'labworks/create_lab.html', {'form': form})
 
-#EDIT
+
 @user_passes_test(student_check)
 def edit(request, lab_id):
     post = get_object_or_404(Lab, pk=lab_id)
@@ -73,7 +73,7 @@ def edit(request, lab_id):
         form = LabForm(instance=post)
     return render(request, 'labworks/edit_lab.html', context)
 
-#CHECK
+
 @user_passes_test(admin_check)
 def check(request, lab_id):
     post = get_object_or_404(Lab, pk=lab_id)
@@ -90,12 +90,11 @@ def check(request, lab_id):
             labwork.task = task
             labwork.condition = post.CONDITION_CHECKED
             labwork.save()
-            # remove absolute URLs
-            #  use reverse()
             return redirect(reverse('taskDetail', args=[task.pk]))
     else:
         form = LabForm(instance=post)
     return render(request, 'labworks/check_lab.html', context)
+
 
 @user_passes_test(user_check)
 def detail(request, lab_id):
@@ -103,13 +102,12 @@ def detail(request, lab_id):
     context = {'one_lab': output}
     return render(request, 'labworks/one_lab.html', context)
 
-#FILE DOWNLOAD
+
 @user_passes_test(user_check)
 def download_file(request, lab_id):
     labs = Lab.objects.get(pk=lab_id)
     url = str(labs.file)
     path_to_file = MEDIA_URL+url
-    #path_to_file = 'http://127.0.0.1:8000/labsmonitor/media/'+url
 
     response = HttpResponse(content_type='application/force-download')
     response['Content-Disposition'] = 'attachment; filename=%s' % smart_str(labs.file)
