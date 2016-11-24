@@ -2,17 +2,17 @@
 from django.contrib.auth.models import User, Group
 from django.test import TestCase
 from django.test import Client
-
 from courses.models import Course
-
 from courses.forms import CourseForm
 from labworks.models import Lab
 from tasks.forms import TaskForm
 
 from tasks.models import Task
 
+
 class UserProfile(object):
     pass
+
 
 class TestCreate(TestCase):
     def setUp(self):
@@ -39,6 +39,7 @@ class TestCreate(TestCase):
         form = CourseForm(data=form_data)
         self.assertTrue(form.is_valid())
 
+
 class TestLoginPost(TestCase):
     def setUp(self):
         self.client = Client()
@@ -53,7 +54,7 @@ class TestLoginPost(TestCase):
         u = User.objects.create_user(username='admin', password='admin111')
         self.client.post('/', {'username': 'admin', 'password': 'admin111'})
         Course.objects.create(name='NewCourse0', professor=u)
-        response = self.client.post('/courses/edit/1/',{'name': 'NewCourse1', 'professor': u})
+        response = self.client.post('/courses/edit/1/', {'name': 'NewCourse1', 'professor': u})
         self.assertEqual(response.status_code, 302)
 
     def test_coursecreate(self):
@@ -76,6 +77,7 @@ class TestLoginPost(TestCase):
                                     {'name': 'Тестовая лабораторная работа', 'author': u, 'mark': '5', 'comment': '',
                                      'task': t, 'file': ''})
         self.assertEqual(response.status_code, 302)
+
 
 class TestPagesLoad(TestCase):
     def test_Pages(self):
@@ -101,4 +103,3 @@ class TestPagesLoad(TestCase):
         self.assertEqual(request10.status_code, 302)
         request11 = self.client.get('/courses/1/delete/1/')
         self.assertEqual(request11.status_code, 302)
-
