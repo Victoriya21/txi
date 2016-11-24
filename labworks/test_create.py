@@ -24,7 +24,7 @@ class TestCreate(TestCase):
         self.user.save()
         self.newCourse = Course(name='testCourse', professor=self.user)
         self.newCourse.save()
-        self.newTask = Task(course= self.newCourse, name='testTask', text='hahaha', points='20')
+        self.newTask = Task(course=self.newCourse, name='testTask', text='hahaha', points='20')
         self.newTask.save()
         self.newLabwork = Lab(name='testWork', mark='10', comment='amazing!', file='testFile.txt', task=self.newTask, author=self.user, condition='')
         self.newLabwork.save()

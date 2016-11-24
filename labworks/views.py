@@ -40,7 +40,7 @@ def admin_check(user):
 @user_passes_test(student_check)
 def create(request, task_id):
     if request.method == "POST":
-        form = LabForm(request.POST, request.FILES)  ##added
+        form = LabForm(request.POST, request.FILES)
         if form.is_valid():
             labwork = form.save(commit=False)
             labwork.author = request.user

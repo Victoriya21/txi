@@ -9,6 +9,5 @@ urlpatterns = [
 
     url(r'^edit/(?P<task_id>[0-9]+)/$', views.edit, name='edit'),
 
-    #url(r'^delete/(\d+)/$', views.delete, name='delete'),
     url(r'^(\d+)/delete/(\d+)/$', views.delete, name='deleteTask')
 ]

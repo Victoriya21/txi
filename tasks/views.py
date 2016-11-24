@@ -3,7 +3,6 @@ from .models import Task
 from courses.models import Course
 from .forms import TaskForm
 from django.shortcuts import redirect
-from django.http import HttpResponseRedirect
 from django.contrib.auth.decorators import user_passes_test
 
 
@@ -13,11 +12,13 @@ def user_check(user):
     else:
         return False
 
+
 def student_check(user):
     if user.groups.filter(name__in=['Students']):
         return True
     else:
         return False
+
 
 def admin_check(user):
     if user.groups.filter(name__in=['Teachers']) or user.is_superuser:
@@ -25,13 +26,14 @@ def admin_check(user):
     else:
         return False
 
+
 @user_passes_test(user_check)
 def detail(request, task_id):
     output = get_object_or_404(Task, id=task_id)
     context = {'one_task': output}
     return render(request, 'tasks/one_task.html', context)
 
-#CREATE
+
 @user_passes_test(admin_check)
 def create(request):
     global idnew
@@ -54,7 +56,7 @@ def create(request):
         form = TaskForm()
     return render(request, 'tasks/create_task.html', {'form': form})
 
-#EDIT
+
 @user_passes_test(admin_check)
 def edit(request, task_id):
     global idnew
@@ -80,15 +82,10 @@ def edit(request, task_id):
         form = TaskForm(instance=post)
     return render(request, 'tasks/edit_task.html', context)
 
-#DELETE
-# def delete(request, task_id):
-#     u = Task.objects.get(pk=task_id)
-#     n = u.course.pk
-#     u.delete()
-#     return HttpResponseRedirect("/courses")
+
 @user_passes_test(admin_check)
 def delete(request, course_id, task_id):
-    u = Task.objects.get(pk=task_id).delete()
+    Task.objects.get(pk=task_id).delete()
     output = get_object_or_404(Course, id=course_id)
     context = {'one_course': output}
     return render(request, 'courses/one_course.html', context)
