@@ -1,25 +1,18 @@
-from multiprocessing.connection import Client
-
+# from multiprocessing.connection import Client
 from django.contrib.auth.models import User, Group
-from django.core.files.uploadedfile import SimpleUploadedFile
 from django.test import TestCase
 from django.test import Client
 
 from courses.models import Course
-from django.contrib.auth import authenticate
 
 from courses.forms import CourseForm
-from labworks.forms import LabForm
 from labworks.models import Lab
 from tasks.forms import TaskForm
-import unittest
 
 from tasks.models import Task
 
-
 class UserProfile(object):
     pass
-
 
 class TestCreate(TestCase):
     def setUp(self):
@@ -29,7 +22,7 @@ class TestCreate(TestCase):
         gr.user_set.add(self.user)
         gr.save()
         self.user.save()
-        self.newCourse = Course(name = 'testCourse', professor = self.user)
+        self.newCourse = Course(name='testCourse', professor=self.user)
         self.newCourse.save()
         self.newTask = Task(course= self.newCourse, name='testTask', text='hahaha', points='20')
         self.newTask.save()
@@ -108,3 +101,4 @@ class TestPagesLoad(TestCase):
         self.assertEqual(request10.status_code, 302)
         request11 = self.client.get('/courses/1/delete/1/')
         self.assertEqual(request11.status_code, 302)
+

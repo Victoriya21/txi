@@ -8,9 +8,8 @@ urlpatterns = [
 
     url(r'^create', views.create, name='create'),
 
-    #url(r'^edit/(?P<course_id>\d+)/$', views.edit, name='edit'),
     url(r'^edit/(?P<course_id>[0-9]+)/$', views.edit, name='edit'),
 
     url(r'^delete/(\d+)/$', views.delete, name='delete'),
-    url(r'^(\d+)/delete/(\d+)/$', views.deleteTask, name='deleteTask'), #удаление задания из курса
+    url(r'^(\d+)/delete/(\d+)/$', views.deleteTask, name='deleteTask'),
 ]
