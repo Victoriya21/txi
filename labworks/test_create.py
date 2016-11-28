@@ -56,7 +56,7 @@ class TestLoginPost(TestCase):
         gr.save()
         self.client.force_login(u)
         Course.objects.create(name='NewCourse0', professor=u)
-        response = self.client.post('/courses/edit/1/', {'name': 'NewCourse1', 'professor': u})
+        self.client.post('/courses/edit/1/', {'name': 'NewCourse1', 'professor': u})
         self.assertEqual(Course.objects.get().name, 'NewCourse1')
 
     def test_coursecreate(self):
@@ -65,7 +65,7 @@ class TestLoginPost(TestCase):
         gr.user_set.add(u)
         gr.save()
         self.client.force_login(u)
-        response = self.client.post('/courses/create_course', {'name': 'Test Course', 'professor': u})
+        self.client.post('/courses/create_course', {'name': 'Test Course', 'professor': u})
         self.assertEqual(Course.objects.get().name, 'Test Course')
 
     def test_taskcreate(self):
