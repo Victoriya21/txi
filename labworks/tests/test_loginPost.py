@@ -63,3 +63,4 @@ class TestLoginPost(TestCase):
         self.assertEqual(lab.author, u)
         self.assertEqual(lab.mark, 5)
         self.assertEqual(lab.comment, 'Отлично')
+        
