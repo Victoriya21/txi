@@ -40,4 +40,3 @@ class TestCreate(TestCase):
         form_data = {'name': ''}
         form = CourseForm(data=form_data)
         self.assertFalse(form.is_valid())
-        
