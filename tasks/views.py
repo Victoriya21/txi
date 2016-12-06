@@ -36,20 +36,11 @@ def detail(request, task_id):
 
 @user_passes_test(admin_check)
 def create(request):
-    global idnew
     if request.method == "POST":
-        courseId = request.POST.get('course_id')
-        convertId = int('0' + courseId)
-
-        all_courses = Course.objects.all()
-        for id_course in all_courses:
-            if id_course.pk == convertId:
-                idnew = id_course
-
         form = TaskForm(request.POST)
         if form.is_valid():
             task = form.save(commit=False)
-            task.course = idnew
+            task.course = Course.objects.get(id=course_id)
             task.save()
             return redirect('http://127.0.0.1:8000/courses/'+courseId, task_id=task.pk)
     else:
