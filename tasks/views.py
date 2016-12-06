@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404
+from django.urls import reverse
 from .models import Task
 from courses.models import Course
 from .forms import TaskForm
@@ -42,7 +43,7 @@ def create(request):
             task = form.save(commit=False)
             task.course = Course.objects.get(id=course_id)
             task.save()
-            return redirect('http://127.0.0.1:8000/courses/'+courseId, task_id=task.pk)
+            return redirect(reverse('course_detail', args=[course_id]))
     else:
         form = TaskForm()
     return render(request, 'tasks/create_task.html', {'form': form})
