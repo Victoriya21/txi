@@ -7,7 +7,7 @@ urlpatterns = [
 
     url(r'^create/(\d+)/$', views.create, name='task_create'),
 
-    url(r'^edit/(?P<task_id>[0-9]+)/$', views.edit, name='edit'),
+    url(r'^edit/(?P<task_id>[0-9]+)/$', views.edit, name='task_edit'),
 
     url(r'^(\d+)/delete/(\d+)/$', views.delete, name='deleteTask')
 ]
