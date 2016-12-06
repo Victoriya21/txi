@@ -21,7 +21,7 @@
       {% for course in course_list %}
         <tr>
           <td>{{ course.id }}</td>
-          <td><a href="http://127.0.0.1:8000/courses/{{ course.id }}">{{ course.name }}</a></td>
+          <td><a href="/courses/{{ course.id }}">{{ course.name }}</a></td>
           <td>{{ course.professor }}</td>
             {% if user.pk == course.professor.pk %}
               <td><a href="/courses/edit/{{course.id}}/">Редактировать</a></td>
