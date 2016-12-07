@@ -28,3 +28,7 @@ footer {
 .form-group {
     overflow: auto;
 }
+
+#taskText {
+    display: none;
+}
