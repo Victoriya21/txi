@@ -36,7 +36,7 @@ def detail(request, task_id):
 
 
 @user_passes_test(admin_check)
-def create(request):
+def create(request, course_id):
     if request.method == "POST":
         form = TaskForm(request.POST)
         if form.is_valid():
