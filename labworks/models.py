@@ -15,7 +15,7 @@ class Lab(models.Model):
         (CONDITION_CHECKED, 'Проверена'),
         (CONDITION_NOT_CHECKED, 'Не проверена'),
     )
-    condition = models.CharField(max_length=50, choices=CONDITION_CHOICES, default=CONDITION_NOT_CHECKED)  # исправить?
+    condition = models.CharField(max_length=50, choices=CONDITION_CHOICES, default=CONDITION_NOT_CHECKED)
 
     file = models.FileField()
     task = models.ForeignKey(Task, related_name='labs')
