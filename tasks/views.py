@@ -51,25 +51,18 @@ def create(request):
 
 @user_passes_test(admin_check)
 def edit(request, task_id):
-    global idnew
     post = get_object_or_404(Task, pk=task_id)
     context = {'edit_task': post}
-
     if request.method == "POST":
         courseId = request.POST.get('course_id')
-        convertId = int('0' + courseId)
-
-        all_courses = Course.objects.all()
-        for id_course in all_courses:
-            if id_course.pk == convertId:
-                idnew = id_course
+        course = get_object_or_404(Course, pk=courseId)
 
         form = TaskForm(request.POST, instance=post)
         if form.is_valid():
             task = form.save()
-            task.course = idnew
+            task.course = course
             task.save()
-            return redirect('http://127.0.0.1:8000/courses/'+courseId, task_id=task.pk)
+            return redirect(reverse('course_detail', args=[course.pk]))
     else:
         form = TaskForm(instance=post)
     return render(request, 'tasks/edit_task.html', context)
