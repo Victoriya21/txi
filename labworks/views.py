@@ -98,13 +98,6 @@ def check(request, lab_id):
 
 
 @user_passes_test(user_check)
-def detail(request, lab_id):
-    output = get_object_or_404(Lab, id=lab_id)
-    context = {'one_lab': output}
-    return render(request, 'labworks/one_lab.html', context)
-
-
-@user_passes_test(user_check)
 def download_file(request, lab_id):
     myfile = Lab.objects.get(pk=lab_id).file
     myfile.open('r')
