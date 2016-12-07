@@ -1,9 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404
 from django.urls import reverse
-from django.utils.encoding import smart_str
 
-from labsmonitor.settings import MEDIA_URL
 from labworks.models import Lab
 from tasks.models import Task
 from .forms import LabForm
