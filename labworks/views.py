@@ -103,11 +103,13 @@ def detail(request, lab_id):
 
 @user_passes_test(user_check)
 def download_file(request, lab_id):
-    labs = Lab.objects.get(pk=lab_id)
-    url = str(labs.file)
-    path_to_file = MEDIA_URL+url
+    myfile = Lab.objects.get(pk=lab_id).file
+    myfile.open('r')
+    wrapper = FileWrapper(myfile)
+    mt = mimetypes.guess_type(myfile.name)[0]
+    response = HttpResponse(wrapper, content_type=mt)
 
-    response = HttpResponse(content_type='application/force-download')
-    response['Content-Disposition'] = 'attachment; filename=%s' % smart_str(labs.file)
-    response['X-Sendfile'] = smart_str(path_to_file)
+    response['Content-Length'] = myfile.size
+    response['Content-Disposition'] = 'attachment; filename={0}'.format(myfile.name)
+
     return response
